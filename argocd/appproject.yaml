@@ -14,4 +14,4 @@ spec:
   - group: triggers.tekton.dev
     kind: '*'
   sourceRepos:
-  - https://github.com/tarosaiba/gitops-demo-local.git
+  - https://github.com/tarosaiba/argocd-on-rancher-desktop.git
