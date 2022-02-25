@@ -55,6 +55,16 @@ find ${copy_to} -type f
 find ${copy_to} -type f | xargs sed -i "" "s/env01/${env_name}/"
 
 
+## Add Namespace
+cat << EOF >>./argocd/namespace.yaml
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ${env_name}
+EOF
+
 ## Add argocd setting
 cat << EOF >>./argocd/application.yaml
 
