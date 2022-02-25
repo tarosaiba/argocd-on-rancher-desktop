@@ -26,3 +26,39 @@ You can try GitOps locally by deploying ArgoCD on Rancher Desktop k3s
 
 ![ArgoCD-UI-01](./docs/images/argocd-ui-01.png)
 ![ArgoCD-UI-02](./docs/images/argocd-ui-02.png)
+
+# Demo
+## Apply change
+
+* Update environment variable of dev webapp-color
+
+```diff
++++ b/deploy/overlays/dev/webapp-color.yaml
+@@ -14,5 +14,5 @@ spec:
+       - name: webapp-color
+         env:
+         - name: APP_COLOR
+-          value: "red"
++          value: "green"
+           # supported color: ["red", "green", "blue", "blue2", "darkblue", "pink"]
+```
+
+```
+$ git commit deploy/overlays/dev/webapp-color.yaml -m "Change app color of dev"                                                                                                               (main✱)
+[main 9b04e89] Change app color of dev
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git push origin main                                                                                                                                                                        (main✱)
+Enumerating objects: 11, done.
+[..]
+To github.com:tarosaiba/argocd-on-rancher-desktop.git
+   29c5749..9b04e89  main -> main
+```
+
+* Wait 3min (ArgoCD auto sync interval is 3min)
+
+![DEMO-01](./docs/images/demo-01.png)
+
+* The changes have been successfully applied!
+
+![DEMO-02](./docs/images/demo-02.png)
