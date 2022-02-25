@@ -49,17 +49,18 @@ copy_from="./deploy/overlays/env01"
 copy_to="./deploy/overlays/${env_name}"
 
 if [ -e ${copy_to} ]; then
-   echo "${copy_to} already exists!"
+   echo "[ERROR] ${copy_to} already exists!"
    exit 1;
 else
    cp -r ${copy_from} ${copy_to}
 fi
 
 cp -r ${copy_from} ${copy_to}
-ls -1 ${copy_to}
+echo "[INFO] ${copy_to} folder generated and files were copied"
 
 ## Sed
 find ${copy_to} -type f | xargs sed -i "" "s/env01/${env_name}/"
+echo "[INFO] files in ${copy_to} were replaced env01 -> ${env_name}"
 
 
 ## Add Namespace
@@ -71,6 +72,8 @@ kind: Namespace
 metadata:
   name: ${env_name}
 EOF
+echo "[INFO] namespace ${env_name} was added"
+
 
 ## Add argocd setting
 cat << EOF >>./argocd/application.yaml
@@ -100,3 +103,4 @@ spec:
     syncOptions:
       - ApplyOutOfSyncOnly=true
 EOF
+echo "[INFO] argocd Application gitops-demo-${env_name} is added"
