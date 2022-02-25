@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: ingress-webapp-color
   labels:
-    name: ingress
+    name: ingress-webapp-color
 spec:
   rules:
   - host: webapp-color-dev.rancher.localhost
