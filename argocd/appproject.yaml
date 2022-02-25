@@ -8,6 +8,8 @@ spec:
   destinations:
   - namespace: dev
     server: https://kubernetes.default.svc
+  - namespace: env01
+    server: https://kubernetes.default.svc
   namespaceResourceBlacklist:
   - group: tekton.dev
     kind: '*'
