@@ -51,6 +51,35 @@ copy_to="./deploy/overlays/${env_name}"
 cp -r ${copy_from} ${copy_to}
 
 ## Sed
-find ${copy_to}
+find ${copy_to} -type f
+find ${copy_to} -type f | xargs sed -i "" "s/env01/${env_name}/"
 
 
+## Add argocd setting
+cat << EOF >>./argocd/application.yaml
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-demo-${env_name}
+  namespace: argocd
+  labels:
+    environment: ${env_name}
+spec:
+  project: gitops-demo
+  destination:
+    namespace: ${env_name}
+    server: https://kubernetes.default.svc
+  source:
+    kustomize:
+    path: deploy/overlays/${env_name}
+    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+EOF
