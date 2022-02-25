@@ -48,10 +48,17 @@ fi
 copy_from="./deploy/overlays/env01"
 copy_to="./deploy/overlays/${env_name}"
 
+if [ -e ${copy_to} ]; then
+   echo "${copy_to} already exists!"
+   exit 1;
+else
+   cp -r ${copy_from} ${copy_to}
+fi
+
 cp -r ${copy_from} ${copy_to}
+ls -1 ${copy_to}
 
 ## Sed
-find ${copy_to} -type f
 find ${copy_to} -type f | xargs sed -i "" "s/env01/${env_name}/"
 
 
