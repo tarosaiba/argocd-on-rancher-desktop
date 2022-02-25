@@ -6,14 +6,8 @@ commonLabels:
   app.kubernetes.io/managed-by: kustomize
 namespace: dev
 
-images:
-  - name: nginx:1.14.2
-    newName: nginx
-    newTag: 1.14.2
-
 resources:
 - ../../base
 
 patchesStrategicMerge:
-- web.yaml
 - ingress.yaml
