@@ -23,7 +23,6 @@ spec:
       selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
-      - CreateNamespace=true
 
 ## env01
 ---
@@ -50,4 +49,3 @@ spec:
       selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
-      - CreateNamespace=true
