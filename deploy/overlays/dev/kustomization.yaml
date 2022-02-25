@@ -11,3 +11,4 @@ resources:
 
 patchesStrategicMerge:
 - ingress.yaml
+- webapp-color.yaml
