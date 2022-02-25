@@ -15,7 +15,7 @@ spec:
   source:
     kustomize:
     path: deploy/overlays/dev
-    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    repoURL: https://github.com/tarosaiba/argocd-on-rancher-desktop.git
     targetRevision: main
   syncPolicy:
     automated:
@@ -41,7 +41,7 @@ spec:
   source:
     kustomize:
     path: deploy/overlays/stg
-    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    repoURL: https://github.com/tarosaiba/argocd-on-rancher-desktop.git
     targetRevision: main
   syncPolicy:
     automated:
@@ -67,7 +67,7 @@ spec:
   source:
     kustomize:
     path: deploy/overlays/prod
-    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    repoURL: https://github.com/tarosaiba/argocd-on-rancher-desktop.git
     targetRevision: main
   syncPolicy:
     automated:
@@ -93,7 +93,7 @@ spec:
   source:
     kustomize:
     path: deploy/overlays/env01
-    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    repoURL: https://github.com/tarosaiba/argocd-on-rancher-desktop.git
     targetRevision: main
   syncPolicy:
     automated:

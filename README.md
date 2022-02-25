@@ -1,4 +1,4 @@
-# GitOps on local with Rancher Desktop
+# GitOps(ArgoCD) on local with Rancher Desktop
 
 You can try GitOps locally by deploying ArgoCD on Rancher Desktop k3s
 
