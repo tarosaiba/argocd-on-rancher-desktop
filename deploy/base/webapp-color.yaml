@@ -41,5 +41,6 @@ spec:
         env:
         - name: APP_COLOR
           value: "red"
+          # supported color: ["red", "green", "blue", "blue2", "darkblue", "pink"]
         ports:
         - containerPort: 8080
