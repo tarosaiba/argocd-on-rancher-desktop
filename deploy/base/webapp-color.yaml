@@ -38,5 +38,8 @@ spec:
       containers:
       - name: webapp-color
         image: kodekloud/webapp-color
+        env:
+        - name: APP_COLOR
+          value: "red"
         ports:
         - containerPort: 8080
