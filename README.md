@@ -56,6 +56,7 @@ To github.com:tarosaiba/argocd-on-rancher-desktop.git
 ```
 
 * Wait 3min (ArgoCD auto sync interval is 3min)
+    - You can see commit id `9b04e89` at CURRENT SYNC STATUS
 
 ![DEMO-01](./docs/images/demo-01.png)
 
