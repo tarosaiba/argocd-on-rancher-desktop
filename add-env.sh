@@ -55,7 +55,6 @@ else
    cp -r ${copy_from} ${copy_to}
 fi
 
-cp -r ${copy_from} ${copy_to}
 echo "[INFO] ${copy_to} folder generated and files were copied"
 
 ## Sed

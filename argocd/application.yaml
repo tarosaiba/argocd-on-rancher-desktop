@@ -24,6 +24,58 @@ spec:
     syncOptions:
       - ApplyOutOfSyncOnly=true
 
+## stg
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-demo-stg
+  namespace: argocd
+  labels:
+    environment: stg
+spec:
+  project: gitops-demo
+  destination:
+    namespace: stg
+    server: https://kubernetes.default.svc
+  source:
+    kustomize:
+    path: deploy/overlays/stg
+    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+
+## prod
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-demo-prod
+  namespace: argocd
+  labels:
+    environment: prod
+spec:
+  project: gitops-demo
+  destination:
+    namespace: prod
+    server: https://kubernetes.default.svc
+  source:
+    kustomize:
+    path: deploy/overlays/prod
+    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+
 ## env01
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -49,3 +101,4 @@ spec:
       selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
+

@@ -1,0 +1,18 @@
+##################################################################################################
+# WebApp Color
+##################################################################################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-color
+spec:
+  replicas: 3
+  template:
+    spec:
+      containers:
+      - name: webapp-color
+        env:
+        - name: APP_COLOR
+          value: "pink"
+          # supported color: ["red", "green", "blue", "blue2", "darkblue", "pink"]
