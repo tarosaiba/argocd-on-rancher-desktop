@@ -3,6 +3,7 @@
 You can try GitOps locally by deploying ArgoCD on Rancher Desktop k3s
 
 # Requirements
+* OS : macOS Big Sur (Intel Mac)
 * Rancher Desktop >= 1.0.1
 * Kubernetes >= v1.22.6
 * ArgoCD >= argocd:v2.2.5
@@ -16,3 +17,8 @@ You can try GitOps locally by deploying ArgoCD on Rancher Desktop k3s
     - pass: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`
 
 # Overview
+
+# Screenshots
+
+![ArgoCD-UI-01](./docs/images/argocd-ui-01.png)
+![ArgoCD-UI-02](./docs/images/argocd-ui-02.png)
