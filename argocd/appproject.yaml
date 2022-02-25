@@ -6,7 +6,7 @@ metadata:
 spec:
   description: GitOps Demo local
   destinations:
-  - namespace: *
+  - namespace: '*'
     server: https://kubernetes.default.svc
   namespaceResourceBlacklist:
   - group: tekton.dev
