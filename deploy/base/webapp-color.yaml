@@ -1,0 +1,42 @@
+##################################################################################################
+# WebApp Color
+##################################################################################################
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-color
+  labels:
+    app: webapp-color
+    role: front
+    service: webapp-color
+spec:
+  ports:
+  - port: 80
+    name: http
+  selector:
+    app: webapp-color
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-color
+  labels:
+    app: webapp-color
+    role: front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-color
+  template:
+    metadata:
+      labels:
+        app: webapp-color
+        role: front
+    spec:
+      containers:
+      - name: webapp-color
+        image: kodekloud/webapp-color
+        ports:
+        - containerPort: 8080
