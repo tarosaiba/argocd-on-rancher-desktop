@@ -12,7 +12,7 @@ metadata:
     service: webapp-color
 spec:
   ports:
-  - port: 80
+  - port: 8080
     name: http
   selector:
     app: webapp-color
