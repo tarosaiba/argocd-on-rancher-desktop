@@ -17,3 +17,23 @@ spec:
             name: web
             port:
               number: 80
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-webapp-color
+  labels:
+    name: ingress-webapp-color
+spec:
+  rules:
+  - host: webapp-color-dev.rancher.localhost
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: webapp-color
+            port:
+              number: 80
