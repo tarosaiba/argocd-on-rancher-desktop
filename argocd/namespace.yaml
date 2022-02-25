@@ -9,33 +9,3 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: env01
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: env02
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: env03
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: env04
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: env05
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: env06
