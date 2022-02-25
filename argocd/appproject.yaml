@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: gitops-demo
+  namespace: argocd
+spec:
+  description: GitOps Demo local
+  destinations:
+  - namespace: dev
+    server: https://kubernetes.default.svc
+  namespaceResourceBlacklist:
+  - group: tekton.dev
+    kind: '*'
+  - group: triggers.tekton.dev
+    kind: '*'
+  sourceRepos:
+  - https://github.com/tarosaiba/gitops-demo-local.git

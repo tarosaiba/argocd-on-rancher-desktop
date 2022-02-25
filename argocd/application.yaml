@@ -1,0 +1,25 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-demo-dev
+  namespace: argocd
+  labels:
+    environment: dev
+spec:
+  project: gitops-demo
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc
+  source:
+    kustomize:
+    path: deploy/overlays/dev
+    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - CreateNamespace=true
