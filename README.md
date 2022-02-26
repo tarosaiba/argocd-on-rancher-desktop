@@ -1,6 +1,6 @@
 # GitOps(ArgoCD) on local with Rancher Desktop
 
-You can try GitOps locally by deploying ArgoCD on Rancher Desktop k3s
+You can try GitOps locally by deploying ArgoCD on Rancher Desktop (k3s)
 
 # Requirements
 * OS : macOS Big Sur (Intel Mac)
