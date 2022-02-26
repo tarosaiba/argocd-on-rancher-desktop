@@ -10,7 +10,7 @@ You can try GitOps locally by deploying ArgoCD on Rancher Desktop (k3s)
 * ArgoCD >= `v2.2.5`
 
 # Quick Start
-* Install [Rancher Desktop](https://rancherdesktop.io/) & Start local kubernetes cluster (k3s)
+* Install [Rancher Desktop](https://rancherdesktop.io/) & Start kubernetes local cluster (k3s)
 * Clone or download this repository
 * Go inside of directory, `cd gitops-demo-local`
 * Run this command `./install-argocd.sh`
@@ -47,11 +47,13 @@ You can try GitOps locally by deploying ArgoCD on Rancher Desktop (k3s)
            # supported color: ["red", "green", "blue", "blue2", "darkblue", "pink"]
 ```
 
-```
+```console
 $ git commit deploy/overlays/dev/webapp-color.yaml -m "Change app color of dev"                                                                                                               (main✱)
 [main 9b04e89] Change app color of dev
  1 file changed, 1 insertion(+), 1 deletion(-)
+```
 
+```console
 $ git push origin main                                                                                                                                                                        (main✱)
 Enumerating objects: 11, done.
 [..]
