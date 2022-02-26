@@ -13,7 +13,7 @@ You can try GitOps locally by deploying ArgoCD on Rancher Desktop (k3s)
 * Install [Rancher Desktop](https://rancherdesktop.io/) & Start local kubernetes cluster (k3s)
 * Clone or download this repository
 * Go inside of directory, `cd gitops-demo-local`
-* Run this command `./init.sh`
+* Run this command `./install-argocd.sh`
 * Get acccess to ArgoCD UI `http://argocd.rancher.localhost`
     - user: admin
     - pass: `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`
