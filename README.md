@@ -70,3 +70,6 @@ To github.com:tarosaiba/argocd-on-rancher-desktop.git
     - URL: `http://webapp-color-dev.rancher.localhost`
 
 ![DEMO-02](./docs/images/demo-02.png)
+
+
+Enjoy!! 😃
