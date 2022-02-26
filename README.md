@@ -30,6 +30,10 @@ You can try GitOps locally by deploying ArgoCD on Rancher Desktop k3s
 # Demo
 ## Apply change
 
+* Check before applying change.
+    - URL: `http://webapp-color-dev.rancher.localhost`
+![DEMO-00](./docs/images/demo-00.png)
+
 * Update environment variable of dev webapp-color
 
 ```diff
@@ -61,5 +65,6 @@ To github.com:tarosaiba/argocd-on-rancher-desktop.git
 ![DEMO-01](./docs/images/demo-01.png)
 
 * The changes have been successfully applied!
+    - URL: `http://webapp-color-dev.rancher.localhost`
 
 ![DEMO-02](./docs/images/demo-02.png)
