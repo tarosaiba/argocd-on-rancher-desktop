@@ -27,3 +27,9 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: env02
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: env03
