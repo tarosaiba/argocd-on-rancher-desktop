@@ -7,7 +7,7 @@ kind: Deployment
 metadata:
   name: webapp-color
 spec:
-  replicas: 3
+  replicas: 0
   template:
     spec:
       containers:
