@@ -127,28 +127,3 @@ spec:
       selfHeal: true
     syncOptions:
       - ApplyOutOfSyncOnly=true
-
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: gitops-demo-env03
-  namespace: argocd
-  labels:
-    environment: env03
-spec:
-  project: gitops-demo
-  destination:
-    namespace: env03
-    server: https://kubernetes.default.svc
-  source:
-    kustomize:
-    path: deploy/overlays/env03
-    repoURL: https://github.com/tarosaiba/argocd-on-rancher-desktop.git
-    targetRevision: main
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - ApplyOutOfSyncOnly=true
