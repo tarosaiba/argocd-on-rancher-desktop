@@ -102,3 +102,28 @@ spec:
     syncOptions:
       - ApplyOutOfSyncOnly=true
 
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitops-demo-env02
+  namespace: argocd
+  labels:
+    environment: env02
+spec:
+  project: gitops-demo
+  destination:
+    namespace: env02
+    server: https://kubernetes.default.svc
+  source:
+    kustomize:
+    path: deploy/overlays/env02
+    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
