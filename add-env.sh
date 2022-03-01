@@ -93,7 +93,7 @@ spec:
   source:
     kustomize:
     path: deploy/overlays/${env_name}
-    repoURL: https://github.com/tarosaiba/gitops-demo-local.git
+    repoURL: https://github.com/tarosaiba/argocd-on-rancher-desktop.git
     targetRevision: main
   syncPolicy:
     automated:
